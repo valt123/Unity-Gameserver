@@ -65,4 +65,12 @@ public class ClientHandle : MonoBehaviour
 
         GameManager.players[_id].Respawn();
     }
+
+    public static void PlayerShootLine(Packet _packet)
+    {
+        int _id = _packet.ReadInt();
+        Vector3 _target = _packet.ReadVector3();
+
+        GameManager.players[_id].Shoot(_target);
+    }
 }

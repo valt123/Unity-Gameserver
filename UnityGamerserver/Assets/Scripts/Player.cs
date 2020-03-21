@@ -98,7 +98,10 @@ public class Player : MonoBehaviour
             {
                 _hit.collider.GetComponent<Player>().TakeDamage(50f);
             }
+
+            ServerSend.PlayerShootLine(this, _hit.point);
         }
+        
     }
 
     public void TakeDamage(float _damage)
